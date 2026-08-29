@@ -1,0 +1,62 @@
+/* Atmospheric section depth: soft light glow at top & bottom of each section,
+   original base color preserved in the center. Background styling only. */
+
+.sr-section,
+.sr-why-section,
+.sr-steps,
+.sr-plans-section,
+.sr-scheduler-section,
+.sr-savings-section,
+.sr-routes-section,
+.sr-vehicles-section,
+.sr-testimonials-section,
+.sr-blog-section,
+.sr-drivers-section,
+.sr-faq-section{
+  background-image:
+    linear-gradient(180deg,
+      rgba(255,255,255,0.85) 0%,
+      rgba(255,255,255,0.55) 6%,
+      rgba(255,255,255,0.22) 14%,
+      rgba(255,255,255,0) 30%,
+      rgba(255,255,255,0) 70%,
+      rgba(255,255,255,0.26) 87%,
+      rgba(255,255,255,0.62) 95%,
+      rgba(255,255,255,0.88) 100%);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+
+/* Dark / navy sections: cool neutral atmospheric light, never gray-washed */
+.sr-safety-section,
+.sr-app-section,
+.sr-corp-section,
+.sr-final-cta{
+  background-image:
+    linear-gradient(180deg,
+      rgba(226,236,255,0.085) 0%,
+      rgba(226,236,255,0.05) 8%,
+      rgba(226,236,255,0.018) 18%,
+      rgba(226,236,255,0) 34%,
+      rgba(226,236,255,0) 66%,
+      rgba(226,236,255,0.022) 82%,
+      rgba(226,236,255,0.055) 92%,
+      rgba(226,236,255,0.095) 100%);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+
+/* Compare section keeps its own base gradient, with atmospheric light layered on top */
+.sr-compare-section{
+  background-image:
+    linear-gradient(180deg,
+      rgba(255,255,255,0.80) 0%,
+      rgba(255,255,255,0.40) 8%,
+      rgba(255,255,255,0) 26%,
+      rgba(255,255,255,0) 72%,
+      rgba(255,255,255,0.30) 88%,
+      rgba(255,255,255,0.80) 100%),
+    linear-gradient(180deg, var(--paper) 0%, var(--white) 100%);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}

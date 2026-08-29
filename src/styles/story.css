@@ -1,0 +1,75 @@
+/*
+ * Unified card interaction system.
+ *
+ * One behaviour, reused across every card group on the page: the hovered
+ * card gains depth and focus while its siblings recede slightly, its media
+ * drifts in a slow cinematic zoom, and its title/CTA shift a couple of px.
+ * Components only add the classes/attributes — the look lives here.
+ */
+
+.sr-card-x {
+  position: relative;
+  transition:
+    box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.45s ease,
+    filter 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.sr-card-x [data-card-media] {
+  overflow: hidden;
+}
+
+.sr-card-x [data-card-media] img,
+.sr-card-x [data-card-media] video,
+.sr-card-x [data-card-media] .sr-photo {
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.sr-card-x [data-card-title],
+.sr-card-x [data-card-cta] {
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.4s ease,
+    opacity 0.4s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sr-card-row:hover .sr-card-x {
+    opacity: 0.74;
+    filter: saturate(0.92);
+  }
+
+  .sr-card-row:hover .sr-card-x:hover,
+  .sr-card-x:hover {
+    opacity: 1;
+    filter: none;
+    z-index: 4;
+  }
+
+  .sr-card-x:hover:not(.sr-card-x--flat) {
+    box-shadow: 0 34px 70px -28px rgba(11, 16, 23, 0.34);
+  }
+
+  .sr-card-x:hover [data-card-media] img,
+  .sr-card-x:hover [data-card-media] .sr-photo,
+  .sr-card-x:hover [data-card-media] video {
+    transform: scale(1.075) translate3d(0, -1.2%, 0);
+  }
+
+  .sr-card-x:hover [data-card-title] {
+    transform: translateY(-2px);
+  }
+
+  .sr-card-x:hover [data-card-cta] {
+    transform: translateX(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-card-x,
+  .sr-card-x * {
+    transition: none !important;
+  }
+}

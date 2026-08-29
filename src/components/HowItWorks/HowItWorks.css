@@ -1,0 +1,98 @@
+.hiw-section {
+  background: var(--white, #fff);
+  color: var(--ink-900, #11151b);
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0;
+}
+.hiw-route-bg {
+  position: absolute;
+  top: 0;
+  right: -6%;
+  width: 52%;
+  height: 100%;
+  opacity: 0.1;
+  pointer-events: none;
+}
+.hiw-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 900px) {
+  .hiw-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 80px;
+  }
+}
+.hiw-left h2 {
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  margin-bottom: 18px;
+  color: var(--ink-900, #11151b);
+}
+.hiw-left p {
+  color: var(--ink-600, #6b7280);
+  font-size: 15.5px;
+  line-height: 1.7;
+  max-width: 38ch;
+}
+.hiw-steps {
+  position: relative;
+}
+.hiw-vline {
+  position: absolute;
+  left: 19px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border, #e5e7eb);
+  overflow: hidden;
+}
+.hiw-vline-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--act-accent, var(--amber));
+  transform: scaleY(0);
+}
+.hiw-step {
+  position: relative;
+  padding: 0 0 40px 60px;
+}
+.hiw-step:last-child {
+  padding-bottom: 0;
+}
+.hiw-step-num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--navy-950);
+  border: 4px solid var(--white);
+  box-shadow: 0 0 0 1px var(--border, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  z-index: 1;
+}
+.hiw-step h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 16.5px;
+  margin-bottom: 5px;
+  color: var(--ink-900, #11151b);
+}
+.hiw-step p {
+  font-size: 13.5px;
+  color: var(--ink-600, #6b7280);
+}
